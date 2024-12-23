@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/beaming-botany-436322-f7/bank-loan-model', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/beaming-botany-436322-f7/bank-loan-model']
+
+- name: 'gcr.io/beaming-botany-436322-f7/bank-loan-model'
+  entrypoint: 'bash'
+  args:
+   - '-c'
+   - |
+      python -m pytest
+      
+
