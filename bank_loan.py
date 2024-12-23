@@ -16,7 +16,6 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 
-
 storage_client = storage.Client()
 bucket = storage_client.bucket("bank-loan-mlops")
 
@@ -36,11 +35,11 @@ def clean_df(df):
   return X, y
 
 def preprocess_data(X, y):
-  X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42, stratify=y)
+  X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42)
   cat_features =  ['CD Account','Education','Family','Securities Account','Online','Securities Account']
   num_features =  ['Age','Experience','Income','CCAvg','Mortgage']
   numeric_transformer = StandardScaler()
-  oh_transformer = OneHotEncoder(drop='first')
+  oh_transformer = OneHotEncoder(drop='first', handle_unknown='ignore')
 
   preprocessor = ColumnTransformer(
       [
