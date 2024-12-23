@@ -16,6 +16,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 
+
 storage_client = storage.Client()
 bucket = storage_client.bucket("bank-loan-mlops")
 
