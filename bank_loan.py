@@ -20,7 +20,6 @@ storage_client = storage.Client()
 bucket = storage_client.bucket("bank-loan-mlops")
 
 
-
 def load_data(file_path):
     df = pd.read_excel(file_path, sheet_name='Data')
     return df
