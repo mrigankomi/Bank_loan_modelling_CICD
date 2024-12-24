@@ -7,8 +7,11 @@ steps:
   args: ['push', 'gcr.io/beaming-botany-436322-f7/bank-loan-model-train']
 
 options:
-  logging: CLOUD_LOGGING_ONLY
-  logs_bucket: 'gs://logs-bucket-bank-model'
+  logging: NONE
+
+# options:
+#   logging: CLOUD_LOGGING_ONLY
+#   logs_bucket: 'gs://logs-bucket-bank-model'
 
 - name: 'gcr.io/beaming-botany-436322-f7/bank-loan-model-train'
   entrypoint: 'bash'
