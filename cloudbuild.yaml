@@ -6,8 +6,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/beaming-botany-436322-f7/bank-loan-model-train']
 
-options:
-  logging: NONE
+
 
 # options:
 #   logging: CLOUD_LOGGING_ONLY
@@ -19,7 +18,10 @@ options:
    - '-c'
    - |
       python -m pytest
- 
+options:
+  logging: NONE
+
+
 # - name: 'gcr.io/cloud-builders/git'
 #   args: ['clone', 'https://github.com/mrigankomi/Bank_loan_modelling_CICD.git']
       
