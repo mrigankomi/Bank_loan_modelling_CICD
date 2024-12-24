@@ -1,6 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/beaming-botany-436322-f7/bank-loan-model-train', '.']
+  options:
+  logging: CLOUD_LOGGING_ONLY
+  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/beaming-botany-436322-f7/bank-loan-model-train']
