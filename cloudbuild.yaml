@@ -12,12 +12,12 @@ steps:
 #   logging: CLOUD_LOGGING_ONLY
 #   logs_bucket: 'gs://logs-bucket-bank-model'
 
-# - name: 'gcr.io/beaming-botany-436322-f7/bank-loan-model-train'
-#   entrypoint: 'bash'
-#   args:
-#    - '-c'
-#    - |
-#       python -m pytest
+- name: 'gcr.io/beaming-botany-436322-f7/bank-loan-model-train'
+  entrypoint: 'bash'
+  args:
+   - '-c'
+   - |
+      python -m pytest
 # options:
 #   logging: NONE
 
